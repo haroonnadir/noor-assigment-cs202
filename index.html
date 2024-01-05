@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body { 
+            background-color: cyan;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            font-weight: bold;
+            text-align: center;
+        }
+        table {
+            width: 70%;
+            margin: 20px;
+            background-color: green;
+        }
+        .profileinfo1 {
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+           text-align: left;
+        }
+        #btn {
+            margin-left: 30px;
+        }
+        #profileText { 
+            display: none;
+            background-color: green;
+            color: black;
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Assignment #2</h1>
+    <h2>Student Profile</h2>
+    <table border="2">
+        <tr>
+            <th colspan="4" class="profileinfo1">Profile info</th>
+        </tr>
+        <tr>
+            <td>StudentID:</td>
+            <td id="studentID">BC200407099</td>
+            <td>Study Program</td>
+            <td id="studyProgram">4-years BS(IT)</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td id="name">Haroon nadir</td>
+            <td>Current semester</td>
+            <td id="currentsemester">Fall 2024</td>
+        </tr>
+        <tr>
+            <td>CGPA:</td>
+            <td id="cgpa">3.5</td>
+            <td>Credit Hrs(earned):</td>
+            <td id="creditHrs">45</td>
+        </tr>
+    </table>
+    <p id="instruction">Please click on the "Print Text" button to view the student profile as text.</p>
+    <input type="button" value="Print Text" onclick="showProfileText()">
+    <p id="infoinstruction">Student Profile as text will be shown here</p>
+
+    <div id="profileText">
+        <p id="ProfileinfoText"></p>
+    </div>
+    <script>
+        function showProfileText() {
+            var profileText = document.getElementById("profileText");
+            var profileInfoText = document.getElementById("ProfileinfoText");
+            var studentID = document.getElementById("studentID").textContent;
+            var studyProgram = document.getElementById("studyProgram").textContent;
+            var name = document.getElementById("name").textContent;
+            var currentsemester = document.getElementById("currentsemester").textContent;
+            var cgpa = document.getElementById("cgpa").textContent;
+            var creditHrs = document.getElementById("creditHrs").textContent;
+            // Constructing the text for display in div tag
+            profileInfoText.textContent = "\nStudent ID: " + studentID + "\nStudy Program: " + studyProgram ;
+            profileInfoText.textContent += "\nName: " + name + "\nCurrent Semester: " + currentsemester;
+            profileInfoText.textContent += "\nCGPA: " + cgpa + "\nCredit Hrs(earned): " + creditHrs;
+            profileText.style.display = "block";
+        }
+        
+    </script>
+
+</body>
+</html>
